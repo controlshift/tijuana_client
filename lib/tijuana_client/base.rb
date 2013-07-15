@@ -18,6 +18,8 @@ module TijuanaClient
       conn = connection(options.merge(current_options))
       path =  conn.path_prefix + '/' + path
 
+      ::Vertebrae::Base.logger.debug "EXECUTED: #{method} - #{path} with #{params} and #{options}"
+
       conn.send(method) do |request|
 
         case method.to_sym
