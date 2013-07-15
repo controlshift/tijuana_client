@@ -1,4 +1,4 @@
-porpoise_external_actions
+tijuana_client_
 =========================
 
-An API client in ruby for the Purpose Platform External Actions API
+An exceptionally simple client for Getup's Tijuana

@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "porpoise_external_actions"
-  gem.homepage = "http://github.com/controlshift/porpoise_external_actions"
+  gem.name = "tijuana_client"
+  gem.homepage = "http://github.com/controlshift/tijuana_client"
   gem.license = "MIT"
-  gem.summary = %Q{API client for Purpose Platform External Actions }
-  gem.description = %Q{An API client for the Purpose Platform}
+  gem.summary = %Q{API client for Tijuana}
+  gem.description = %Q{An API client for the code that runs Getup.org.au}
   gem.email = "nathan@controlshiftlabs.com"
   gem.authors = ["Nathan Woodhull"]
   # dependencies defined in Gemfile
