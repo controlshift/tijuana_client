@@ -33,6 +33,19 @@ module TijuanaClient
       end
     end
 
+    def default_middleware(options={})
+      Proc.new do |builder|
+        builder.use Faraday::Request::Multipart
+        builder.use Faraday::Request::UrlEncoded
+        builder.use Vertebrae::Request::BasicAuth, authentication if authenticated?
+
+        builder.use Faraday::Response::Logger if ENV['DEBUG']
+
+        builder.use Vertebrae::Response::RaiseError
+        builder.adapter adapter
+      end
+    end
+
     private
 
     def extract_data_from_params(params)
