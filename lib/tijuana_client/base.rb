@@ -12,7 +12,7 @@ module TijuanaClient
 
     def request(method, path, params, options) # :nodoc:
       if !::Vertebrae::Request::METHODS.include?(method)
-        raise ArgumentError, "unkown http method: #{method}"
+        raise ArgumentError, "unknown http method: #{method}"
       end
 
       conn = connection(options.merge(current_options))
@@ -50,7 +50,7 @@ module TijuanaClient
 
     def extract_data_from_params(params)
       if params.has_key?('data') && params['data'].present?
-        return params['data']
+        return "data=#{params['data']}"
       else
         return params
       end

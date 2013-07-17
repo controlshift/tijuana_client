@@ -22,7 +22,7 @@ describe TijuanaClient::User do
 
   describe "create" do
     let(:body) { "" }
-    let(:request_body) { JSON.generate({ first_name: 'Nathan'})}
+    let(:request_body) { "data=#{ JSON.generate({ first_name: 'Nathan'})}" }
     let(:request_path) { '/api/users/' }
 
     before(:each) do
@@ -45,33 +45,33 @@ describe TijuanaClient::User do
         lambda { subject.user.create(first_name: 'Nathan') }.should raise_exception
       end
     end
+  end
 
-    describe "basic authentication" do
-      subject { TijuanaClient.new(host: 'test.com', username: 'username', password: 'password')}
+  describe "basic authentication" do
+    subject { TijuanaClient.new(host: 'test.com', username: 'username', password: 'password')}
 
-      let(:body) { "" }
-      let(:request_body) { JSON.generate({ first_name: 'Nathan'})}
-      let(:request_path) { '/api/users/' }
+    let(:body) { "" }
+    let(:request_body) { "data=#{ JSON.generate({ first_name: 'Nathan'})}" }
+    let(:request_path) { '/api/users/' }
 
-      before(:each) do
-        stub_request(:post, "https://username:password@test.com#{request_path}").with(body: request_body).to_return(:body => body, :status => status,
-                                                                   :headers => { content_type: "application/json; charset=utf-8"})
+    before(:each) do
+      stub_request(:post, "https://username:password@test.com#{request_path}").with(body: request_body).to_return(:body => body, :status => status,
+                                                                 :headers => { content_type: "application/json; charset=utf-8"})
+    end
+
+    describe "success" do
+      let(:status) { 200 }
+
+      it "should create a user" do
+        subject.user.create(first_name: 'Nathan')
       end
+    end
 
-      describe "success" do
-        let(:status) { 200 }
+    describe "unauthorized" do
+      let(:status) { 401 }
 
-        it "should create a user" do
-          subject.user.create(first_name: 'Nathan')
-        end
-      end
-
-      describe "unauthorized" do
-        let(:status) { 401 }
-
-        it "should return nil" do
-          lambda { subject.user.create(first_name: 'Nathan') }.should raise_exception
-        end
+      it "should return nil" do
+        lambda { subject.user.create(first_name: 'Nathan') }.should raise_exception
       end
     end
   end
