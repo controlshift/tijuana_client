@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tijuana_client"
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nathan Woodhull"]
-  s.date = "2013-07-17"
+  s.date = "2013-07-30"
   s.description = "An API client for the code that runs Getup.org.au"
   s.email = "nathan@controlshiftlabs.com"
   s.extra_rdoc_files = [
@@ -32,7 +32,8 @@ Gem::Specification.new do |s|
     "spec/client_spec.rb",
     "spec/spec_helper.rb",
     "spec/tijuana_spec.rb",
-    "spec/user_spec.rb"
+    "spec/user_spec.rb",
+    "tijuana_client.gemspec"
   ]
   s.homepage = "http://github.com/controlshift/tijuana_client"
   s.licenses = ["MIT"]
