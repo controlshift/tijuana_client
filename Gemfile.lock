@@ -1,3 +1,12 @@
+PATH
+  remote: /work/vertebrae
+  specs:
+    vertebrae (0.2.0)
+      activesupport
+      faraday
+      faraday_middleware
+      hashie
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,8 +30,8 @@ GEM
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.4)
-    faraday (0.8.7)
-      multipart-post (~> 1.1)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     git (1.2.5)
@@ -83,14 +92,9 @@ GEM
     rspec-mocks (2.14.1)
     safe_yaml (0.9.4)
     slop (3.4.5)
-    thread_safe (0.1.0)
+    thread_safe (0.1.2)
       atomic
     tzinfo (0.3.37)
-    vertebrae (0.1.6)
-      activesupport
-      faraday
-      faraday_middleware
-      hashie
     webmock (1.13.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
@@ -104,5 +108,5 @@ DEPENDENCIES
   pry
   pry-debugger
   rspec
-  vertebrae
+  vertebrae!
   webmock

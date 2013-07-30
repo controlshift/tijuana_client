@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
     "lib/tijuana_client.rb",
     "lib/tijuana_client/base.rb",
     "lib/tijuana_client/client.rb",
-    "lib/tijuana_client/configuration.rb",
     "lib/tijuana_client/user.rb",
     "spec/client_spec.rb",
     "spec/spec_helper.rb",

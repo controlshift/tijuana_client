@@ -8,16 +8,10 @@ describe TijuanaClient::Client do
 
     context 'process_basic_auth' do
       let(:options) { { :basic_auth => 'login:password' } }
-      its(:username) { should eq 'login' }
-      its(:password) { should eq 'password' }
-      its(:basic_auth) { should eq 'login:password' }
+      let(:config) { subject.connection.configuration  }
+      specify { config.username.should eq 'login' }
+      specify { config.password.should eq 'password' }
     end
 
-    context "process username & password" do
-      let(:options) { { :username => 'login', password: 'password' } }
-      its(:username) { should eq 'login' }
-      its(:password) { should eq 'password' }
-      its(:basic_auth) { should eq 'login:password' }
-    end
   end
 end

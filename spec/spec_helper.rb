@@ -36,16 +36,10 @@ def stub_post(path)
 end
 
 def stub_tijuana_request(method, path)
-  prefix = TijuanaClient.prefix.to_s
+  prefix = TijuanaClient.new.connection.configuration.prefix.to_s
   stub_request(method, "https://test.com" + prefix + path)
 end
 
-def reset_authentication_for(object)
-  [ 'username', 'password' ].each do |item|
-    TijuanaClient.send("#{item}=", nil)
-    object.send("#{item}=", nil)
-  end
-end
 
 
 def fixture_path
