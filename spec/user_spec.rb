@@ -23,7 +23,7 @@ describe TijuanaClient::User do
 
   describe 'create' do
     let(:body) { '' }
-    let(:request_body) { "data=#{ URI::encode(JSON.generate({ first_name: 'Nathan'}))}" }
+    let(:request_body){ {'data' => JSON.generate({ first_name: 'Nathan'})} }
     let(:request_path) { '/api/users/' }
 
     before(:each) do
@@ -52,7 +52,7 @@ describe TijuanaClient::User do
     subject { TijuanaClient.new(host: 'test.com', username: 'username', password: 'password')}
 
     let(:body) { "" }
-    let(:request_body) { "data=#{ URI::encode(JSON.generate({ first_name: 'Nathan'}))}" }
+    let(:request_body) { {'data' => JSON.generate({ first_name: 'Nathan'})} }
     let(:request_path) { '/api/users/' }
 
     before(:each) do

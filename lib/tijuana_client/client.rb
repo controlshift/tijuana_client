@@ -57,7 +57,7 @@ module TijuanaClient
 
     def extract_data_from_params(params)
       if params.has_key?('data') && params['data'].present?
-        return "data=#{URI::encode(params['data'])}"
+        return  {'data'=> params['data']}
       else
         return params
       end
