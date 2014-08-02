@@ -21,12 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{An API client for the code that runs Getup.org.au}
   gem.email = "nathan@controlshiftlabs.com"
   gem.authors = ["Nathan Woodhull"]
-
-  gem.add_dependency 'vertebrae'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'webmock'
-  gem.add_development_dependency 'pry'
-  gem.add_development_dependency 'pry-debugger'
+  # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
