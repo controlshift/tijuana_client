@@ -10,5 +10,5 @@ group :development do
   gem 'pry'
   gem 'pry-debugger'
   gem "bundler"
-  gem "jeweler", "~> 1.8.4"
+  gem "jeweler", "~> 2.0.0"
 end
