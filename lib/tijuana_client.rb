@@ -1,4 +1,5 @@
 require 'vertebrae'
+require 'tijuana_client/error_middleware'
 require 'tijuana_client/base'
 require 'tijuana_client/user'
 require 'tijuana_client/client'

@@ -13,10 +13,8 @@ RSpec.configure do |config|
   config.color = true
 end
 
-
 RSpec.configure do |config|
   config.include WebMock::API
-
 
   config.before(:each) do
     WebMock.reset!
@@ -24,7 +22,6 @@ RSpec.configure do |config|
   config.after(:each) do
     WebMock.reset!
   end
-
 end
 
 def stub_get(path)
@@ -39,8 +36,6 @@ def stub_tijuana_request(method, path)
   prefix = TijuanaClient.new.connection.configuration.prefix.to_s
   stub_request(method, "https://test.com" + prefix + path)
 end
-
-
 
 def fixture_path
   File.expand_path("../fixtures", __FILE__)

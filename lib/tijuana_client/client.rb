@@ -48,7 +48,7 @@ module TijuanaClient
 
         builder.use Faraday::Response::Logger if ENV['DEBUG']
 
-        builder.use Vertebrae::Response::RaiseError
+        builder.use TijuanaClient::ErrorMiddleware
         builder.adapter connection.configuration.adapter
       end
     end

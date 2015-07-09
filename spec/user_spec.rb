@@ -42,8 +42,26 @@ describe TijuanaClient::User do
     describe 'an error' do
       let(:status) { 500 }
 
-      it 'should return nil' do
+      it 'should raise' do
         expect { subject.user.create(first_name: 'Nathan') }.to raise_exception(StandardError)
+      end
+    end
+
+    describe 'generic validation error' do
+      let(:status) { 400 }
+      let(:body) { '{"foo":["is bar"]}' }
+
+      it 'should return nil' do
+        expect { subject.user.create(first_name: 'Nathan') }.to raise_exception(TijuanaClient::ValidationError)
+      end
+    end
+
+    describe 'email validation error' do
+      let(:status) { 400 }
+      let(:body) { '{"email":["is invalid"]}' }
+
+      it 'should return nil' do
+        expect { subject.user.create(first_name: 'Nathan') }.to raise_exception(TijuanaClient::EmailValidationError)
       end
     end
   end
