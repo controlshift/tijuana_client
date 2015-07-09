@@ -5,7 +5,7 @@ describe TijuanaClient::User do
 
   describe 'configuration' do
     it 'should propagate the host' do
-      subject.user.client.connection.configuration.host.should == 'test.com'
+      expect(subject.user.client.connection.configuration.host).to eq('test.com')
     end
   end
 
@@ -16,7 +16,7 @@ describe TijuanaClient::User do
     let(:params) { {first_name: 'Nathan'} }
 
     it 'should jsonify params' do
-       client.should_receive(:post_request).with('/foo', {'data' => JSON.generate({ first_name: 'Nathan'}) } )
+       expect(client).to receive(:post_request).with('/foo', {'data' => JSON.generate({ first_name: 'Nathan'}) } )
        client.post_json_request(path, params)
     end
   end
@@ -43,7 +43,7 @@ describe TijuanaClient::User do
       let(:status) { 500 }
 
       it 'should return nil' do
-        lambda { subject.user.create(first_name: 'Nathan') }.should raise_exception
+        expect { subject.user.create(first_name: 'Nathan') }.to raise_exception(StandardError)
       end
     end
   end
@@ -72,7 +72,7 @@ describe TijuanaClient::User do
       let(:status) { 401 }
 
       it "should return nil" do
-        lambda { subject.user.create(first_name: 'Nathan') }.should raise_exception
+        expect { subject.user.create(first_name: 'Nathan') }.to raise_exception(StandardError)
       end
     end
   end
