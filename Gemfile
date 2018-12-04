@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem 'vertebrae'
+gem 'vertebrae', '~> 0.4.3'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
@@ -10,5 +10,5 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
   gem 'bundler'
-  gem 'jeweler', "~> 2.0.0"
+  gem 'jeweler', '~> 2.1', '>= 2.1.2'
 end
