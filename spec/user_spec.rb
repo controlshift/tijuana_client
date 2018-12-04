@@ -74,8 +74,8 @@ describe TijuanaClient::User do
     let(:request_path) { '/api/users/' }
 
     before(:each) do
-      stub_request(:post, "https://username:password@test.com#{request_path}").with(body: request_body).to_return(:body => body, :status => status,
-                                                                 :headers => { content_type: "application/json; charset=utf-8"})
+      stub_request(:post, "https://test.com#{request_path}").with(basic_auth: ['username', 'password'], body: request_body)
+        .to_return(:body => body, :status => status, :headers => { content_type: "application/json; charset=utf-8"})
     end
 
     describe "success" do
