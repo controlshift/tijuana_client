@@ -11,4 +11,5 @@ group :development do
   gem 'pry-byebug'
   gem 'bundler'
   gem 'jeweler', '~> 2.1', '>= 2.1.2'
+  gem 'rubocop'
 end
