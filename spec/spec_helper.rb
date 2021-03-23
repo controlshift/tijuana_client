@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
 require 'tijuana_client'
 require 'webmock/rspec'
 
-
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each {|f| require f}
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.color = true
@@ -34,11 +35,11 @@ end
 
 def stub_tijuana_request(method, path)
   prefix = TijuanaClient.new.connection.configuration.prefix.to_s
-  stub_request(method, "https://test.com" + prefix + path)
+  stub_request(method, "https://test.com#{prefix}#{path}")
 end
 
 def fixture_path
-  File.expand_path("../fixtures", __FILE__)
+  File.expand_path('fixtures', __dir__)
 end
 
 def fixture(file)

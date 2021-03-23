@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TijuanaClient
   class Base < Vertebrae::Model
     def normalized_base_path

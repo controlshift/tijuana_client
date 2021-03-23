@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'vertebrae'
 require 'tijuana_client/error_middleware'
 require 'tijuana_client/base'

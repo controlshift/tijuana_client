@@ -1,15 +1,17 @@
-source "http://rubygems.org"
+# frozen_string_literal: true
 
-gem 'vertebrae', '> 0.5.0'
+source 'http://rubygems.org'
+
+gem 'vertebrae', '> 0.6.0'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem 'rspec'
-  gem 'webmock'
+  gem 'bundler'
+  gem 'juwelier', git: 'https://github.com/flajann2/juwelier.git'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'bundler'
-  gem 'jeweler', '~> 2.1', '>= 2.1.2'
+  gem 'rspec'
   gem 'rubocop'
+  gem 'webmock'
 end

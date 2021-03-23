@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TijuanaClient
   class User < Base
     def base_path
