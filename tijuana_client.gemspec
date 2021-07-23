@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Nathan Woodhull".freeze]
-  s.date = "2021-03-23"
+  s.date = "2021-07-23"
   s.description = "An API client for the code that runs Getup.org.au".freeze
   s.email = "nathan@controlshiftlabs.com".freeze
   s.extra_rdoc_files = [
@@ -19,10 +19,10 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
+    ".github/workflows/ci.yml",
     ".rubocop.yml",
     ".ruby-gemset",
     ".ruby-version",
-    ".travis.yml",
     "Gemfile",
     "LICENSE.txt",
     "README.md",
@@ -41,31 +41,22 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/controlshift/tijuana_client".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.0.8".freeze
+  s.rubygems_version = "3.1.6".freeze
   s.summary = "API client for Tijuana".freeze
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
+  end
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<vertebrae>.freeze, [">= 0.6.0"])
-      s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
-      s.add_development_dependency(%q<juwelier>.freeze, [">= 0"])
-      s.add_development_dependency(%q<pry>.freeze, [">= 0"])
-      s.add_development_dependency(%q<pry-byebug>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_development_dependency(%q<rubocop>.freeze, [">= 0"])
-      s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
-    else
-      s.add_dependency(%q<vertebrae>.freeze, [">= 0.6.0"])
-      s.add_dependency(%q<bundler>.freeze, [">= 0"])
-      s.add_dependency(%q<juwelier>.freeze, [">= 0"])
-      s.add_dependency(%q<pry>.freeze, [">= 0"])
-      s.add_dependency(%q<pry-byebug>.freeze, [">= 0"])
-      s.add_dependency(%q<rspec>.freeze, [">= 0"])
-      s.add_dependency(%q<rubocop>.freeze, [">= 0"])
-      s.add_dependency(%q<webmock>.freeze, [">= 0"])
-    end
+  if s.respond_to? :add_runtime_dependency then
+    s.add_runtime_dependency(%q<vertebrae>.freeze, [">= 0.6.0"])
+    s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+    s.add_development_dependency(%q<juwelier>.freeze, [">= 0"])
+    s.add_development_dependency(%q<pry>.freeze, [">= 0"])
+    s.add_development_dependency(%q<pry-byebug>.freeze, [">= 0"])
+    s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
+    s.add_development_dependency(%q<rubocop>.freeze, [">= 0"])
+    s.add_development_dependency(%q<webmock>.freeze, [">= 0"])
   else
     s.add_dependency(%q<vertebrae>.freeze, [">= 0.6.0"])
     s.add_dependency(%q<bundler>.freeze, [">= 0"])

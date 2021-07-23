@@ -1,6 +1,6 @@
 tijuana_client
 =========================
 
-[![Build Status](https://travis-ci.org/controlshift/tijuana_client.svg)](https://travis-ci.org/controlshift/tijuana_client)
+[![CI Status](https://github.com/controlshift/tijuana_client/actions/workflows/ci.yml/badge.svg)](https://github.com/controlshift/tijuana_client/actions/workflows/ci.yml)
 
 An exceptionally simple client for Getup's Tijuana
