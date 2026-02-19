@@ -19,20 +19,20 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = ['>= 3.3', '< 5.0']
 
   # Runtime dependencies
-  spec.add_runtime_dependency 'vertebrae', '>= 1.0.5'
+  spec.add_runtime_dependency 'vertebrae', '~> 1.0'
   spec.add_runtime_dependency 'faraday', '~> 2.0'
 
   # Development dependencies
-  spec.add_development_dependency 'bundler', '>= 2.0'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'pry-byebug'
+  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'pry', '~> 0.14'
+  spec.add_development_dependency 'pry-byebug', '~> 3.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'rubocop', '~> 1.0'
+  spec.add_development_dependency 'webmock', '~> 3.0'
 
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
